@@ -1,0 +1,20 @@
+import flet as ft
+from time import sleep
+
+def main(page: ft.Page):
+    page.title = "Counter App - Happy New Year Countdown Timer"
+        
+    text = ft.Text()
+
+    page.add(text)
+
+    for i in range(10,0,-1):
+        text.value = "Count " + str(i)
+        page.update()
+        sleep(1) # sleep() will make the program sleep for 1 second
+
+        if i==1:
+            text.value = "Happy New Year"
+            page.add(text)
+
+ft.app(target=main)
